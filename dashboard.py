@@ -12,6 +12,9 @@ dates = pd.date_range("2025-01-01", "2025-12-31", freq="D")
 
 appointments = []
 
+# Dias da semana em português
+weekdays_pt = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
+
 for date in dates:
     month = date.month
 
@@ -37,7 +40,7 @@ df = pd.DataFrame({
     "Day": dates.day,
     "Month": dates.month,
     "Week": ((dates.dayofyear - 1) // 7 + 1),
-    "Weekday": dates.day_name(locale="pt_BR"),
+    "Weekday": [weekdays_pt[d.weekday()] for d in dates],
     "Appointments": appointments,
     "Date": dates
 })
@@ -91,7 +94,7 @@ elif view == "Mês":
     title = "Atendimentos por mês"
     x_label = "Meses"
 
-# Só um gráfico agora
+# Line chart
 fig_line = px.line(
     plot_df,
     x=x_col,
