@@ -3,7 +3,14 @@
 **Disciplina:** Sistemas de Apoio à Decisão (SAD)  
 **Atividade:** Visualização e análise de dados de atendimentos de uma barbearia  
 
+**
+
 ---
+
+**Acesso Online:**
+
+O dashboard já está disponível online via Streamlit Cloud:
+https://ericmadson-sad-ufrn-dashboard-8sxchf.streamlit.app/
 
 ## Descrição
 
@@ -53,4 +60,3 @@ O dataset é simulado com base em padrões realistas de atendimento, incluindo s
 3. **Executar o script**
   ```bash
   python -m streamlit run dashboard.py
-
